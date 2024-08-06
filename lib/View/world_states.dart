@@ -45,15 +45,14 @@ class WorldStatesState extends State<WorldStates> with TickerProviderStateMixin 
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height:  MediaQuery.of(context).size.height * .03,),
               FutureBuilder(
                   future: _services.fetchWorldRecords(),
                   builder: (context,AsyncSnapshot<WorldStatesModal> snapshot){
                     if(!snapshot.hasData){
-
-                      return Expanded(
-                        flex: 1,
+                      return Center(
                         child: SpinKitFadingCircle(
                           color: Colors.white,
                           size: 50.0,
